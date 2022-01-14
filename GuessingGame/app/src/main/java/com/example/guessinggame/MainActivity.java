@@ -3,6 +3,7 @@ package com.example.guessinggame;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -69,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkGuess();
+            }
+        });
+
+        txtGuess.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                checkGuess();
+                return false;
             }
         });
 
